@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if lte IE 9]>     <html lang="en" class="no-focus lt-ie10 lt-ie10-msg"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <title>Motorcu</title>
+
+        <meta name="description" content="utopian.io/@dogancankilment">
+        <meta name="author" content="utopian.io/@dogancankilment">
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta property="og:title" content="utopian.io/@dogancankilment">
+        <meta property="og:site_name" content="utopian.io/@dogancankilment">
+        <meta property="og:description" content="utopian.io/@dogancankilment">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+
+        <link rel="shortcut icon" href="{{STATIC_URL}}static/img/favicons/favicon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{STATIC_URL}}static/img/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{STATIC_URL}}static/img/favicons/apple-touch-icon-180x180.png">
+
+        <link rel="stylesheet" id="css-main" href="{{STATIC_URL}}static/css/codebase.min.css">
+
+    </head>
+    <body>
+        <div id="page-container" class="main-content-boxed">
+            <!-- Main Container -->
+            <main id="main-container">
+                <!-- Page Content -->
+                <div class="bg-image" style="background-image: url('{{STATIC_URL}}static/img/photos/arkafon.jpg');">
+                    <div class="row mx-0 bg-earth-op">
+                        <div class="hero-static col-md-6 col-xl-8 d-none d-md-flex align-items-md-end">
+                            <div class="p-30 invisible" data-toggle="appear">
+                                <p class="font-size-h3 font-w600 text-white mb-5">
+                                    Aracınızı nasıl kullanıyorsunuz? Hızlı, Agresif yoksa Sakin mi?
+                                </p>
+                                <p class="font-size-h5 text-white">
+                                    <i class="fa fa-angles-right"></i> Gelin hemen beraber hesaplayalım.
+                                </p>
+                                <p class="font-italic text-white-op">
+                                    <span>utopian.io/@dogancankilment</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-white">
+                            <div class="content content-full">
+                                <!-- Header -->
+                                <div class="px-30 py-10">
+                                    <a class="link-effect font-w700" href="index.html">
+                                        <span class="font-size-xl text-primary-dark">Motorc</span><span class="font-size-xl">u</span>
+                                    </a>
+                                    <h1 class="h3 font-w700 mt-30 mb-10">Yakıt Tüketimi</h1>
+                                    <h2 class="h5 font-w400 text-muted mb-0">Pek yakında çok daha iyisi ile karşınızda olacağız.</h2>
+                                </div>
+
+                                <form class="js-validation-signup px-30" action="" method="post">
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="mesafe" name="mesafe" placeholder="100">
+                                                <label for="mesafe">Toplam Kat Edilen Mesafe KM</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="tutar" name="tutar" placeholder="100">
+                                                <label for="tutar">Toplam Satın Alınan Yakıt Tutarı (TL)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="secim" name="secim">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Benzin/Mazot</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-sm btn-hero btn-alt-success">
+                                            <i class="fa fa-plus mr-10"></i> Hesapla
+                                        </button>
+                                    </div>
+                                    {% csrf_token %}
+
+                                    {% if tuketim %}
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <div class="form-material label">
+                                                    <input type="text" class="form-control" id="tuketim" name="tuketim" value="{{ tuketim }}">
+                                                    <label for="tutar">KM Başı Son Tüketim Tutarı (TL)</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <script src="{{STATIC_URL}}static/js/core/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/popper.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.slimscroll.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.scrollLock.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.appear.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.countTo.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/js.cookie.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/codebase.js"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="{{STATIC_URL}}static/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+
+        <!-- Page JS Code -->
+        <script src="{{STATIC_URL}}static/js/pages/op_auth_signup.js"></script>
+
+    </body>
+</html>
