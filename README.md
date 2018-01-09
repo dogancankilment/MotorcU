@@ -29,6 +29,7 @@ Motorcu Beta için planlananlar:
 - Yakıt tipi seçim özelliği
 - Kullanılan alanlar ile ilgili açıklama sayfaları
 
+Motorcu Beta Future Plan:
 - User profile integration
 - Create transaction profile
 - Associating user profiles and transaction profiles with each other
