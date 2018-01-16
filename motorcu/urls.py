@@ -13,6 +13,10 @@ urlpatterns = patterns('',
                            'motorcu.views.fuel',
                            name='fuel'),
 
+                       url(r'^oil-care',
+                           'motorcu.views.oilcare',
+                           name='oilcare'),
+
                        )
 
 if settings.DEBUG:
