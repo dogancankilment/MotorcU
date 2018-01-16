@@ -15,7 +15,7 @@ def home(request):
 
             c.update(csrf(request))
 
-            return render_to_response("index.html", c)
+            return render_to_response("fuel/index.html", c)
 
     c = {"request": request}
     c.update(csrf(request))
