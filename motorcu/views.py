@@ -21,3 +21,10 @@ def fuel(request):
     c.update(csrf(request))
 
     return render_to_response("fuel/index.html", c)
+
+
+def oilcare(request):
+    c = {"request": request}
+    c.update(csrf(request))
+
+    return render_to_response("oil/index.html", c)
