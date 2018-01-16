@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.core.context_processors import csrf
 
 
-def home(request):
+def fuel(request):
     if request.POST:
         if request.POST["mesafe"] and request.POST["tutar"]:
             mesafe = request.POST["mesafe"]
