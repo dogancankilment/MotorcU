@@ -6,8 +6,13 @@ from django.conf import settings
 
 urlpatterns = patterns('',
                        url(r'^$',
-                           'motorcu.views.home',
-                           name='home'),
+                           'motorcu.views.fuel',
+                           name='homefuel'),
+
+                       url(r'^fuel',
+                           'motorcu.views.fuel',
+                           name='fuel'),
+
                        )
 
 if settings.DEBUG:
