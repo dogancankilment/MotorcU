@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-        <title>Motorcu</title>
+        <title>Oil Care</title>
 
         <meta name="description" content="utopian.io/@dogancankilment">
         <meta name="author" content="utopian.io/@dogancankilment">
@@ -30,17 +30,18 @@
             <!-- Main Container -->
             <main id="main-container">
                 <!-- Page Content -->
-                <div class="bg-image" style="background-image: url('assets/img/photos/photo2@2x.jpg');">
+                <div class="bg-image" style="background-image: url('static/img/photos/arkafon.jpg');">
                     <div class="hero-static content content-full bg-white-op-90 invisible" data-toggle="appear" data-class="animated fadeIn">
                         <!-- Avatar -->
                         <div class="py-30 px-5 text-center">
                             <a class="link-effect text-pulse font-w700" href="index.html">
-                                <i class="si si-fire"></i>
-                                <span class="font-size-xl text-pulse-dark">code</span><span class="font-size-xl">base</span>
+                                <span class="font-size-xl text-pulse-dark">Motorc</span><span class="font-size-xl">u</span>
                             </a>
-                            <h1 class="h2 font-w700 mt-50 mb-10">Welcome back, Admin</h1>
-                            <h2 class="h4 font-w400 text-muted mb-30">Please enter your password</h2>
-                            <img class="img-avatar img-avatar96" src="assets/img/avatars/avatar15.jpg" alt="">
+                            <h1 class="h2 font-w700 mt-50 mb-10">Yağ Seçimine Hoşgeldiniz</h1>
+                            <h2 class="h4 font-w400 text-muted mb-30">Yaşadığınız şehrin ısı değerini giriniz.
+                                <br/>Ben de size hangi değerlerde yağ kullanmanız gerektiğini söyleyeyim.
+                            </h2>
+                            <img class="img-avatar img-avatar96" src="{{STATIC_URL}}media/oil-care-logo.jpg" alt="">
                         </div>
                         <!-- END Avatar -->
 
@@ -49,23 +50,60 @@
                             <div class="col-sm-8 col-md-6 col-xl-4">
                                 <!-- jQuery Validation (.js-validation-lock class is initialized in js/pages/op_auth_lock.js) -->
                                 <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                                <form class="js-validation-lock" action="be_pages_auth_all.html" method="post">
+                                <form class="js-validation-lock" action="" method="post">
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <div class="form-material floating">
-                                                <input type="password" class="form-control" id="lock-password" name="lock-password">
-                                                <label for="lock-password">Password</label>
+                                                <input type="text" class="form-control" id="hava" name="hava">
+                                                <label for="hava">Hava Sıcaklığı</label>
                                             </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="marka" name="marka">
+                                                <label for="marka">Kullanmak İstediğiniz Yağ Markası</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="sehir" name="sehir">
+                                                <label for="sehir">Yaşadığınız Şehir</label>
+                                            </div>
+                                        </div>
+                                        <br><br><br><br>
+                                        <div class="col-12">Kullanmakta olduğunuz araç?</div>
+                                        <div class="col-12">
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="otomobil" name="otomobil">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Otomobil</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="motosiklet" name="motosiklet">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">Motosiklet</span>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-hero btn-noborder btn-rounded btn-alt-danger">
-                                            <i class="si si-lock-open mr-10"></i> Unlock
+                                            Hesapla
                                         </button>
-                                        <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary" href="op_auth_signin.html">
-                                            <i class="si si-logout text-muted mr-10"></i> Sign Out
-                                        </a>
                                     </div>
+                                    {% csrf_token %}
+
+                                    {% if secim %}
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <div class="form-material label">
+                                                    <input type="text" class="form-control" id="secim" name="secim" value="{{ secim }}">
+                                                    <label for="secim">Doğru Yağ Tercihi</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </form>
                             </div>
                         </div>
