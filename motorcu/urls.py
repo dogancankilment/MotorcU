@@ -6,19 +6,19 @@ from django.conf import settings
 
 urlpatterns = patterns('',
                        url(r'^$',
-                           'motorcu.views.fuel',
-                           name='homefuel'),
+                           'motorcu.views.home',
+                           name='home'),
 
                        url(r'^fuel',
-                           'motorcu.views.fuel',
+                           'fuel.views.fuel',
                            name='fuel'),
 
                        url(r'^oil-care',
-                           'motorcu.views.oilcare',
+                           'oilcare.views.oilcare',
                            name='oilcare'),
 
                        url(r'^tire-pressure',
-                           'motorcu.views.tire',
+                           'tirepressure.views.tire',
                            name='tire'),
 
                        )
