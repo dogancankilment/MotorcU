@@ -1,0 +1,130 @@
+<!doctype html>
+<!--[if lte IE 9]> <html lang="en" class="no-focus lt-ie10 lt-ie10-msg"><![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"><!--<![endif]-->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <title>Tire Pressure</title>
+
+        <meta name="description" content="utopian.io/@dogancankilment">
+        <meta name="author" content="utopian.io/@dogancankilment">
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta property="og:title" content="utopian.io/@dogancankilment">
+        <meta property="og:site_name" content="utopian.io/@dogancankilment">
+        <meta property="og:description" content="utopian.io/@dogancankilment">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+
+        <link rel="shortcut icon" href="{{STATIC_URL}}media/index.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{STATIC_URL}}static/img/favicons/favicon-192x192.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{STATIC_URL}}static/img/favicons/apple-touch-icon-180x180.png">
+
+        <link rel="stylesheet" id="css-main" href="{{STATIC_URL}}static/css/codebase.min.css">
+
+    </head>
+    <body>
+        <div id="page-container" class="main-content-boxed">
+            <main id="main-container">
+                <div class="bg-body-dark bg-pattern" style="background-image: url('static/img/various/bg-pattern-inverse.png');">
+                    <div class="row mx-0 justify-content-center">
+                        <div class="hero-static col-lg-6 col-xl-4">
+                            <div class="content content-full overflow-hidden">
+                                <div class="py-30 text-center">
+                                    <a class="link-effect font-w700" href="/">
+                                        <span class="font-size-xl text-primary-dark">Motorc</span><span class="font-size-xl">u</span>
+                                    </a>
+                                    <h1 class="h4 font-w700 mt-30 mb-10">Virajlar için / Güvenli sürüş için</h1>
+                                    <h2 class="h5 font-w400 text-muted mb-0">Doğru Lastik Basıncı Sizi Yolda Tutar
+                                    </h2>
+                                </div>
+
+                                <form class="js-validation-reminder" action="" method="post">
+                                    <div class="block block-themed block-rounded block-shadow">
+                                        <div class="block-header bg-gd-primary">
+                                            <h3 class="block-title">Güvenli Sürüş İçin Lastik Hava Basınıcınızı Belirleyin</h3>
+                                            <div class="block-options">
+                                                <button type="button" class="btn-block-option">
+                                                    <i class="si si-wrench"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="block-content">
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="reminder-credential">Motosikletinizin Markası</label>
+                                                    <input type="text" class="form-control" id="marka" name="marka">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="reminder-credential">Motosikletinizin Toplam Ağırlığı</label>
+                                                    <input type="text" class="form-control" id="motosikletkg" name="motosikletkg">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="reminder-credential">Üzerindeki Yolcuların Toplam Ağırlığı</label>
+                                                    <input type="text" class="form-control" id="yolcukg" name="yolcukg">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12">
+                                                    <label for="reminder-credential">Lastik Markanız</label>
+                                                    <input type="text" class="form-control" id="lastikmarka" name="lastikmarka">
+                                                </div>
+                                            </div>
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btn btn-alt-primary">
+                                                    Hesapla
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% csrf_token %}
+
+                                    {% if onlastik %}
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <div class="form-material label">
+                                                    <input type="text" class="form-control" id="onlastik" name="onlastik" value="{{ onlastik }}">
+                                                    <label for="onlastik">Ön Lastik Basıncınız</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <div class="form-material label">
+                                                    <input type="text" class="form-control" id="arkalastik" name="arkalastik" value="{{ arkalastik }}">
+                                                    <label for="arkalastik">Arka Lastik Basıncınız</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="{{STATIC_URL}}static/js/core/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/popper.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/bootstrap.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.slimscroll.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.scrollLock.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.appear.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/jquery.countTo.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/core/js.cookie.min.js"></script>
+        <script src="{{STATIC_URL}}static/js/codebase.js"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="{{STATIC_URL}}static/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+
+        <!-- Page JS Code -->
+        <script src="{{STATIC_URL}}static/js/pages/op_auth_reminder.js"></script>
+    </body>
+</html>
