@@ -123,9 +123,8 @@ INSTALLED_APPS = (
     'fuel',
     'oilcare',
     'tirepressure',
-    # Uncomment the next line to enable the admin:
+    'authentico',
     # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
 
