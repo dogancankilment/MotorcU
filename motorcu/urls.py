@@ -21,6 +21,18 @@ urlpatterns = patterns('',
                            'tirepressure.views.tire',
                            name='tire'),
 
+                       url(r'^login',
+                           'authentico.views.motorcu_login',
+                           name='motorcu_login'),
+
+                       url(r'^register',
+                           'authentico.views.motorcu_register',
+                           name='motorcu_register'),
+
+                       url(r'^logout$',
+                           'authentico.views.motorcu_logout',
+                           name='motorcu_logout'),
+
                        )
 
 if settings.DEBUG:
