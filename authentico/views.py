@@ -27,7 +27,7 @@ def motorcu_register(request, template_name="auth/register.html"):
 
     c = {"form": form,
          "request": request}
-    
+
     c.update(csrf(request))
 
     return render_to_response(template_name, c)
