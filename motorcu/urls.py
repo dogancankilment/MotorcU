@@ -33,6 +33,10 @@ urlpatterns = patterns('',
                            'authentico.views.motorcu_logout',
                            name='motorcu_logout'),
 
+                       # url(r'^test',
+                       #     'motorcu.views.test_new_dashboard',
+                       #     name='test_dashboard')
+
                        )
 
 if settings.DEBUG:
