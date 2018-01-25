@@ -25,9 +25,12 @@ def motorcu_register(request, template_name="auth/register.html"):
 
             return HttpResponseRedirect(reverse(motorcu_login))
 
-    return render(request,
-                  template_name,
-                  {'form': form})
+    c = {"form": form,
+         "request": request}
+    
+    c.update(csrf(request))
+
+    return render_to_response(template_name, c)
 
 
 def motorcu_login(request):
