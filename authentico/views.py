@@ -26,3 +26,23 @@ def motorcu_register(request, template_name="auth/register.html"):
     return render(request,
                   template_name,
                   {'form': form})
+
+
+def motorcu_login(request):
+    form = LoginForm(request.POST or None)
+
+    if form.is_valid():
+        user = authenticate(username=form.cleaned_data['username'],
+                            password=form.cleaned_data['password'])
+
+        if user:
+                auth.login(request, user)
+
+                return HttpResponseRedirect(reverse('home'))
+
+        else:
+            messages.error(request,
+                           (_('Boyle bir kullanici sistemde kayitli degil')))
+
+    return render_to_response('auth/login.html',
+                  {'login_form': form})
