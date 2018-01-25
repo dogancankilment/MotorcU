@@ -12,3 +12,17 @@ from .forms import UserCreateForm, LoginForm
 def motorcu_logout(request):
     auth.logout(request)
     return redirect(reverse('home'))
+
+
+def motorcu_register(request, template_name="auth/register.html"):
+    form = UserCreateForm(request.POST or None)
+
+    if request.POST:
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect(reverse(motorcu_login_url))
+
+    return render(request,
+                  template_name,
+                  {'form': form})
