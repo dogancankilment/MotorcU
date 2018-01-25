@@ -21,7 +21,7 @@ def motorcu_register(request, template_name="auth/register.html"):
         if form.is_valid():
             form.save()
 
-            return HttpResponseRedirect(reverse(motorcu_login_url))
+            return HttpResponseRedirect(reverse(motorcu_login))
 
     return render(request,
                   template_name,
