@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from .forms import UserCreateForm, LoginForm
 from django.utils.translation import ugettext as _
+from django.core.context_processors import csrf
 
 
 @login_required()
@@ -45,5 +46,9 @@ def motorcu_login(request):
             messages.error(request,
                            (_('Boyle bir kullanici sistemde kayitli degil')))
 
-    return render_to_response('auth/login.html',
-                  {'login_form': form})
+    c = {"request": request,
+         "login_form": form}
+
+    c.update(csrf(request))
+
+    return render_to_response('auth/login.html', c)
